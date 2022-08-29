@@ -45,7 +45,7 @@ function countAnimals(animal) {
     obj[`${element.name}`] = element.residents.length;
   };
   data.species.forEach(add);
-  console.log(obj);
   return obj;
 }
+
 module.exports = countAnimals;
