@@ -1,18 +1,17 @@
 const data = require('../data/zoo_data');
 const { hours } = data;
 
-function completeObject(obj) {
-  const newOBj = obj;
-  const arrayKeys = Object.keys(hours);
-  arrayKeys.forEach((element) => {
-    let day = `${hours.element}`;
-    const day = {
+// function completeObject(obj) {
+//   const newOBj = obj;
+//   const arrayKeys = Object.keys(hours);
+//   arrayKeys.forEach((element) => {
+//     // let day = `${hours.element}`;
+//     // const day = {
 
-    },
-  });
-  // console.log(arrayKeys);
-}
-
+//     },
+//   });
+//   // console.log(arrayKeys);
+// }
 
 function createObject() {
   const obj = {
@@ -24,7 +23,7 @@ function createObject() {
     Sunday: {},
     Monday: {},
   };
-  completeObject(obj);
+  // completeObject(obj);
   return obj;
 }
 
