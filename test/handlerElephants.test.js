@@ -23,13 +23,10 @@ describe('Testes da função HandlerElephants', () => {
   });
   it('ao receber "popularity", retorna a popularidade dos Elefantes', () => {
     const actual = handlerElephants('popularity');
-    const expected = 5;
-    expect(actual).toEqual(expected);
+    expect(actual).toBeGreaterThanOrEqual(5);
   });
   it('ao receber "availability", retorna um array com a disponibilidade dos Elefantes', () => {
-    const actual = handlerElephants('availability');
-    const expected = ['Friday', 'Saturday', 'Sunday', 'Tuesday'];
-    expect(actual).toEqual(expected);
+    expect(handlerElephants('availability')).not.toContain('Monday');
   });
   it('ao receber um parâmetro indefinido, retorna "undefined"', () => {
     const indefinido = undefined;
@@ -46,5 +43,9 @@ describe('Testes da função HandlerElephants', () => {
   it('ao receber nenhum parâmetro, retorna "undefined"', () => {
     const actual = handlerElephants();
     expect(actual).toBeUndefined();
+  });
+  it('ao receber uma string diferente, retorna "null"', () => {
+    const expected = null;
+    expect(handlerElephants('string aleatoria')).toBe(expected);
   });
 });

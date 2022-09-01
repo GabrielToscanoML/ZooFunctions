@@ -34,6 +34,13 @@ const handlerElephants = (param) => {
 };
 
 module.exports = handlerElephants;
-console.log(handlerElephants());
+// testando todas as possibilidades
+// console.log(handlerElephants('count'));
 // console.log(handlerElephants('names'));
 // console.log(handlerElephants('averageAge'));
+// console.log(handlerElephants('location'));
+// console.log(handlerElephants('popularity'));
+// console.log(handlerElephants('availability'));
+// console.log(handlerElephants());
+// console.log(handlerElephants({}));
+// console.log(handlerElephants('string no daleeeeee'));
