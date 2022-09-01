@@ -34,6 +34,6 @@ const handlerElephants = (param) => {
 };
 
 module.exports = handlerElephants;
-console.log(handlerElephants('location'));
+console.log(handlerElephants());
 // console.log(handlerElephants('names'));
 // console.log(handlerElephants('averageAge'));
