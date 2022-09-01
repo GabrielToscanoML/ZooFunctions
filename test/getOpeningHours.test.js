@@ -31,28 +31,32 @@ describe('Testes da função getOpeningHours', () => {
   });
   it('ao receber os argumentos "Thu" e "09:00-AM", retorna uma mensagem', () => {
     const actual = getOpeningHours('Thu', '09:00-AM');
-    expect(actual).toThrow(/^The day must be valid. Example: Monday$/);
+    const expected = 'The day must be valid. Example: Monday';
+    expect(actual).toThrow(expected);
   });
   it('ao receber os argumentos "Friday" e "09:00-ZM", retorna uma mensagem', () => {
     const actual = getOpeningHours('Friday', '09:00-ZM');
-    expect(actual).toThrow(/^The abbreviation must be 'AM' or 'PM'$/);
+    const expected = 'The abbreviation must be "AM" or "PM"';
+    expect(actual).toThrow(expected);
   });
   it('ao receber os argumentos "Saturday" e "C9:00-AM", retorna uma mensagem', () => {
     const actual = getOpeningHours('Saturday', 'C9:00-AM');
-    expect(actual).toThrow(/^The hour should represent a number$/);
+    const expected = 'The hour should represent a number';
+    expect(actual).toThrow(expected);
   });
   it('ao receber os argumentos "Sunday" e "09:c0-AM", retorna uma mensagem', () => {
     const actual = getOpeningHours('Sunday', '09:c0-AM');
-    expect(actual).toThrow(/^The minutes should represent a number$/);
+    const expected = 'The minutes should represent a number';
+    expect(actual).toThrow(expected);
   });
   it('ao receber os argumentos "Monday" e "13:00-AM", retorna uma mensagem', () => {
     const actual = getOpeningHours('Monday', '13:00-AM');
-    // const expected = 'The hour must be between 0 and 12';
-    expect(actual).toThrow(/^The hour must be between 0 and 12'$/);
+    const expected = 'The hour must be between 0 and 12';
+    expect(actual).toThrow(expected);
   });
   it('ao receber os argumentos "Tuesday" e "09:60-AM", retorna uma mensagem', () => {
     const actual = getOpeningHours('Tuesday', '09:60-AM');
-    // const expected = 'The minutes must be between 0 and 59';
-    expect(actual).toThrow(/^The minutes must be between 0 and 59'$/);
+    const expected = 'The minutes must be between 0 and 59';
+    expect(actual).toThrow(expected);
   });
 });
