@@ -29,34 +29,28 @@ describe('Testes da função getOpeningHours', () => {
     const expected = 'The zoo is closed';
     expect(actual).toEqual(expected);
   });
-  it('ao receber os argumentos "Thu" e "09:00-AM", retorna uma mensagem', () => {
-    const actual = getOpeningHours('Thu', '09:00-AM');
+  it('Testa se ao receber os argumentos "Thu" e "9:00-AM" lança um erro', () => {
     const expected = 'The day must be valid. Example: Monday';
-    expect(actual).toThrow(expected);
+    expect(() => { getOpeningHours('Thu', '9:00-AM'); }).toThrow(expected);
   });
-  it('ao receber os argumentos "Friday" e "09:00-ZM", retorna uma mensagem', () => {
-    const actual = getOpeningHours('Friday', '09:00-ZM');
-    const expected = 'The abbreviation must be "AM" or "PM"';
-    expect(actual).toThrow(expected);
+  it('Testa se ao receber os argumentos "Friday" e "9:00-ZM" lança um erro', () => {
+    const expected = 'The abbreviation must be \'AM\' or \'PM\'';
+    expect(() => { getOpeningHours('Friday', '9:00-ZM'); }).toThrow(expected);
   });
-  it('ao receber os argumentos "Saturday" e "C9:00-AM", retorna uma mensagem', () => {
-    const actual = getOpeningHours('Saturday', 'C9:00-AM');
+  it('Testa se ao receber os argumentos "Saturday" e "C9:00-AM" lança um erro', () => {
     const expected = 'The hour should represent a number';
-    expect(actual).toThrow(expected);
+    expect(() => { getOpeningHours('Saturday', 'C9:00-AM'); }).toThrow(expected);
   });
-  it('ao receber os argumentos "Sunday" e "09:c0-AM", retorna uma mensagem', () => {
-    const actual = getOpeningHours('Sunday', '09:c0-AM');
+  it('Testa se ao receber os argumentos "Saturday" e "09:c0-AM" lança um erro', () => {
     const expected = 'The minutes should represent a number';
-    expect(actual).toThrow(expected);
+    expect(() => { getOpeningHours('Saturday', '09:c0-AM'); }).toThrow(expected);
   });
-  it('ao receber os argumentos "Monday" e "13:00-AM", retorna uma mensagem', () => {
-    const actual = getOpeningHours('Monday', '13:00-AM');
+  it('Testa se ao receber os argumentos "Monday" e "13:00-AM" lança um erro', () => {
     const expected = 'The hour must be between 0 and 12';
-    expect(actual).toThrow(expected);
+    expect(() => { getOpeningHours('Monday', '13:00-AM'); }).toThrow(expected);
   });
-  it('ao receber os argumentos "Tuesday" e "09:60-AM", retorna uma mensagem', () => {
-    const actual = getOpeningHours('Tuesday', '09:60-AM');
+  it('Testa se ao receber os argumentos "Tuesday" e "09:60-AM"', () => {
     const expected = 'The minutes must be between 0 and 59';
-    expect(actual).toThrow(expected);
+    expect(() => { getOpeningHours('Tuesday', '09:60-AM'); }).toThrow(expected);
   });
 });

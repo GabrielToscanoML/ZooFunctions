@@ -2,28 +2,19 @@ const handlerElephants = require('../src/handlerElephants');
 
 describe('Testes da função HandlerElephants', () => {
   it('ao receber "count", retorna a quantidade de Elefantes', () => {
-    const actual = handlerElephants('count');
-    const expected = 4;
-    expect(actual).toEqual(expected);
+    expect(handlerElephants('count')).toEqual(4);
   });
   it('ao receber "names", retorna um array com os nomes de todos os Elefantes', () => {
-    const actual = handlerElephants('names');
-    const expected = ['Ilana', 'Orval', 'Bea', 'Jefferson'];
-    expect(actual).toEqual(expected);
+    expect(handlerElephants('names')).toEqual(['Ilana', 'Orval', 'Bea', 'Jefferson']);
   });
   it('ao receber "averageAge", retorna a média de idade de todos os Elefantes', () => {
-    const actual = handlerElephants('averageAge');
-    const expected = 10.5;
-    expect(actual).toEqual(expected);
+    expect(handlerElephants('averageAge')).toEqual(10.5);
   });
   it('ao receber "location", retorna a localização dos Elefantes', () => {
-    const actual = handlerElephants('location');
-    const expected = 'NW';
-    expect(actual).toEqual(expected);
+    expect(handlerElephants('location')).toEqual('NW');
   });
   it('ao receber "popularity", retorna a popularidade dos Elefantes', () => {
-    const actual = handlerElephants('popularity');
-    expect(actual).toBeGreaterThanOrEqual(5);
+    expect(handlerElephants('popularity')).toBeGreaterThanOrEqual(5);
   });
   it('ao receber "availability", retorna um array com a disponibilidade dos Elefantes', () => {
     expect(handlerElephants('availability')).not.toContain('Monday');
@@ -35,17 +26,12 @@ describe('Testes da função HandlerElephants', () => {
     expect(actual).toEqual(expected);
   });
   it('ao receber um parâmetro que não seja string, retorna "Parâmetro inválido, é necessário uma string"', () => {
-    const param = 'umaPalavra';
-    const typeofparam = (typeof param);
-    const expected = 'Parâmetro inválido, é necessário uma string';
-    expect(expected).not.toBe(typeofparam === 'string');
+    expect(handlerElephants(123)).toBe('Parâmetro inválido, é necessário uma string');
   });
   it('ao receber nenhum parâmetro, retorna "undefined"', () => {
-    const actual = handlerElephants();
-    expect(actual).toBeUndefined();
+    expect(handlerElephants()).toBeUndefined();
   });
   it('ao receber uma string diferente, retorna "null"', () => {
-    const expected = null;
-    expect(handlerElephants('string aleatoria')).toBe(expected);
+    expect(handlerElephants('string aleatoria')).toBe(null);
   });
 });
