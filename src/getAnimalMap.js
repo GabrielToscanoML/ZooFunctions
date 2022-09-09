@@ -15,8 +15,8 @@ function getAnimalMap(options) {
     SE: getAnimalsLocation('SE'),
     SW: getAnimalsLocation('SW'),
   };
-  console.log(animals);
+
+  return animals;
 }
 
 module.exports = getAnimalMap;
-getAnimalMap();
